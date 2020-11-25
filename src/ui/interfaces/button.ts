@@ -1,7 +1,7 @@
-import ASTNode from '@/src/core/interfaces/ASTNode'
+import State from 'src/core/types/state'
 
 interface Button {
-	apply(ast: ASTNode): ASTNode
+	apply(state: State): void
 }
 
 export default Button

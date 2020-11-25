@@ -46,6 +46,7 @@ LaTeX:
 
 
 ```javascript
+```javascript
 const ast = {
   type: 'strong',
   children: [
@@ -60,7 +61,7 @@ const ast = {
   ],
 }
 
-const transformAstForView = function (ast): AST {
+const transformAstForView = function (ast): Ast {
     return {
       type: 'strong',
       children: [

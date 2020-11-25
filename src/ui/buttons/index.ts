@@ -1,1 +1,1 @@
-export {default as ItalicButton} from './ItalicButton'
+export {default as ItalicButton} from 'src/ui/buttons/italicButton'

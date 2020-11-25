@@ -5,6 +5,29 @@
 	"version": "3.0.0-alpha.0",
 	"private": true,
 	"main": "dist/trumbowyg.js",
+	"scripts": {
+		"test": "NODE_ENV=test TS_NODE_PROJECT='tsconfig.tests.json' ava"
+	},
+	"ava": {
+		"files": [
+			"tests/**"
+		],
+		"extensions": [
+			"ts"
+		],
+		"require": [
+			"tsconfig-paths/register",
+			"ts-node/register",
+			"source-map-support/register"
+		]
+	},
+	"devDependencies": {
+		"ava": "^3.13.0",
+		"source-map-support": "^0.5.19",
+		"ts-node": "^9.0.0",
+		"tsconfig-paths": "^3.9.0",
+		"typescript": "^4.0.3"
+	},
 	"homepage": "http://alex-d.github.io/Trumbowyg",
 	"author": {
 		"name": "Alexandre Demode (Alex-D)",
@@ -19,10 +42,6 @@
 		"url": "https://github.com/Alex-D/Trumbowyg/issues"
 	},
 	"license": "MIT",
-	"devDependencies": {
-	},
-	"scripts": {
-	},
 	"keywords": [
 		"wysiwyg",
 		"editor",
