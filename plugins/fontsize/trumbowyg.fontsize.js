@@ -260,10 +260,20 @@
 
     function buildDropdown(trumbowyg) {
         var dropdown = [];
+        
+        var sizeList = {};
+        
+        if (Array.isArray(trumbowyg.o.plugins.fontsize.sizeList)) {
+            $.each(trumbowyg.o.plugins.fontsize.sizeList, function (index, size) {
+                sizeList[size] = size
+            });
+        } else {
+            sizeList = trumbowyg.o.plugins.fontsize.sizeList
+        }
 
-        $.each(trumbowyg.o.plugins.fontsize.sizeList, function (index, size) {
+        $.each(Object.keys(sizeList), function (index, size) {
             trumbowyg.addBtnDef('fontsize_' + size, {
-                text: '<span style="font-size: ' + size + ';">' + (trumbowyg.lang.fontsizes[size] || size) + '</span>',
+                text: '<span style="font-size: ' + sizeList[size] + ';">' + (trumbowyg.lang.fontsizes[size] || size) + '</span>',
                 hasIcon: false,
                 fn: function () {
                     setFontSize(trumbowyg, size);
